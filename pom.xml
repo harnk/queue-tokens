@@ -89,7 +89,7 @@
         <repository>
             <id>internal.repo</id>
             <name>Internal repo</name>
-            <url>file:///Users/scottnull/nd/queuetokens/target</url>
+            <url>file://target</url>
         </repository>
     </distributionManagement>
 
