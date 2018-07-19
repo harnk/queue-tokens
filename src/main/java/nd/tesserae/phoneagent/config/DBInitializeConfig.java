@@ -26,27 +26,48 @@ public class DBInitializeConfig {
         try {
             Connection connection = dataSource.getConnection();
             Statement statement = connection.createStatement();
-            statement.execute("DROP TABLE IF EXISTS UserLogin");
+            statement.execute("DROP TABLE IF EXISTS push_queue_prod");
             statement.executeUpdate(
-                    "CREATE TABLE UserLogin(" +
+                    "CREATE TABLE push_queue_prod(" +
                             "id INTEGER Primary key, " +
-                            "userName varchar(30) not null," +
-                            "password varchar(30) not null," +
-                            "firstName varchar(30) not null, " +
-                            "lastName varchar(30) not null," +
-                            "email varchar(100) not null," +
-                            "mobile varchar(30) not null)"
+                            "device_token varchar(128) not null," +
+                            "payload varchar(256) not null," +
+                            "time_queued bigint not null, " +
+                            "time_sent bigint)"
             );
             statement.executeUpdate(
-                    "INSERT INTO UserLogin " +
-                            "(userName,password,firstName,lastName,email,mobile) " +
-                            "VALUES " + "('bharat0126','dbase123','Bharat','Verma',"
-                            + " 'bharatverma2488@gmail.com','8861456151')"
+                    "CREATE TABLE push_queue_sandbox(" +
+                            "id INTEGER Primary key, " +
+                            "device_token varchar(128) not null," +
+                            "payload varchar(256) not null," +
+                            "time_queued bigint not null, " +
+                            "time_sent bigint)"
+            );
+            statement.executeUpdate(
+                    "INSERT INTO push_queue_prod " +
+                            "(device_token,payload,time_queued) " +
+                            "VALUES " + "('59f7e441496c69ba64721a362bbbea62bfeb0b3dd2d7417795aa4c0fdf9ce3f2',"
+                            + "'{\"aps\":{\"badge\":1,\"alert\":\"Ok you are in background...\",\"sound\":\"beep.caf\"}',"
+//                            + "'{payload:payload}',"
+                            + " 1529596838702)"
+            );
+            statement.executeUpdate(
+                    "INSERT INTO push_queue_sandbox " +
+                            "(device_token,payload,time_queued) " +
+                            "VALUES " + "('c5896eb978ad12ce09e0f14eace8d073a45e94b0301e9ce4eda6983c10edda89',"
+                            + "'{\"aps\":{\"badge\":1,\"alert\":\"Msg to sandbox device ...\",\"sound\":\"beep.caf\"}',"
+//                            + "'{payload:payload}',"
+                            + " 1529596838745)"
             );
             statement.executeUpdate(
                     "INSERT INTO person " +
                             "(uid,hashed_pass,app_version,bundle_id,system_version,device_info,push_token,is_sandbox,device_bind_at,created_at,file_uploaded_at,os_type,device_session_token) " +
-                            "VALUES " + "('bharat012z6','zzx2xzzxx','3.4999','tesserae.phoneagent.zzxx','11.3.1.99','iPhone13,1','36c67b3925efab91dfd996c7ac5edcc2c4e39cb79d85943f246389476e6f3df4',0,1529596876820,1513632469879,1529597411388,'ios','i0wth0is0going0n')"
+                            "VALUES " + "('harnk000001','zzx2xzzxx','3.4999','tesserae.phoneagent.zzxx','11.3.1.99','iPhone13,1','36c67b3925efab91dfd996c7ac5edcc2c4e39cb79d85943f246389476e6f3df4',0,1529596876820,1513632469879,1529597411388,'ios','i0wth0is0going0n')"
+            );
+            statement.executeUpdate(
+                    "INSERT INTO person " +
+                            "(uid,hashed_pass,app_version,bundle_id,system_version,device_info,push_token,is_sandbox,device_bind_at,created_at,file_uploaded_at,os_type,device_session_token) " +
+                            "VALUES " + "('harnk000002','fewhfrewf','3.4999','tesserae.phoneagent.zzxx','11.3.1.99','iPhone13,1','zzyzxb3925efab91dfd996c7ac5edcc2c4e39cb79d85943f246389476e6f3df4',1,1529596876820,1513632469879,1529597411388,'ios','i0wth0is0going0n')"
             );
             statement.close();
             connection.close();
