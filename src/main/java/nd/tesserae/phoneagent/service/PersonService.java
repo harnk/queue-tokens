@@ -23,31 +23,12 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    //Executes each 5000 ms chg this to 10 minutes later (600,000)
-    @Scheduled(fixedRate=5000)
-    public void checkRecords() {
-
-//        Test query
-//        Person person = new Person();
-//        person = getPerson("scottnull");
-//        logger.info("person.push_token is:"+ person.getPushToken());
-
-        // Get all with push tokens
-        List<Person> persons = new ArrayList<>();
-        persons = getAllPersonsWithPushTokensAndOsType("ios");
-        logger.info("We found "+ persons.size()+" persons with push tokens and os type ios");
-
-        for (Person person : persons) {
-            if (person.isSandbox()){
-                logger.info("token: "+person.getPushToken()+" is_sandbox: " + person.isSandbox());
-                // Insert a record into push_queue_sandbox table
-
-            } else {
-                // Insert a record into push_queue_prod table
-
-            }
-        }
-    }
+//    private PushService pushService;
+//
+//    @Autowired
+//    public void setPushService(PushService pushService){
+//        this.pushService = pushService;
+//    }
 
     public List<Person> getAllPersons() {
         List<Person> persons = new ArrayList<>();
