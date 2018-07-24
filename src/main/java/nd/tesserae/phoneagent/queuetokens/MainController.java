@@ -1,8 +1,8 @@
-package nd.tesserae.phoneagent;
+package nd.tesserae.phoneagent.queuetokens;
 
-import nd.tesserae.phoneagent.entities.Person;
-import nd.tesserae.phoneagent.service.PersonService;
-import nd.tesserae.phoneagent.service.PushService;
+import nd.tesserae.phoneagent.queuetokens.entities.Person;
+import nd.tesserae.phoneagent.queuetokens.service.PersonService;
+import nd.tesserae.phoneagent.queuetokens.service.PushService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

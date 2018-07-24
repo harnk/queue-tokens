@@ -1,4 +1,4 @@
-package nd.tesserae.phoneagent.config;
+package nd.tesserae.phoneagent.queuetokens.config;
 
 import javax.sql.DataSource;
 

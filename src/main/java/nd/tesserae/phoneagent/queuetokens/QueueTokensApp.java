@@ -1,15 +1,11 @@
-package nd.tesserae.phoneagent;
+package nd.tesserae.phoneagent.queuetokens;
 
-import nd.tesserae.phoneagent.entities.Person;
-import nd.tesserae.phoneagent.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -19,6 +15,9 @@ import java.io.File;
 
 /**
  * Created by dscottnull on 7/17/18.
+ *
+ * tesserae-phoneagent-queuetokens
+ *
  */
 
 

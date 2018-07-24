@@ -1,4 +1,4 @@
-package nd.tesserae.phoneagent.config;
+package nd.tesserae.phoneagent.queuetokens.config;
 
 /**
  * Created by dscottnull on 7/17/18.

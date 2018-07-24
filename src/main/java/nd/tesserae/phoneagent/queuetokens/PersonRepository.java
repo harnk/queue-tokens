@@ -1,6 +1,6 @@
-package nd.tesserae.phoneagent;
+package nd.tesserae.phoneagent.queuetokens;
 
-import nd.tesserae.phoneagent.entities.Person;
+import nd.tesserae.phoneagent.queuetokens.entities.Person;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

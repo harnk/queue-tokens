@@ -1,4 +1,4 @@
-package nd.tesserae.phoneagent.entities;
+package nd.tesserae.phoneagent.queuetokens.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,16 +1,14 @@
-package nd.tesserae.phoneagent.service;
+package nd.tesserae.phoneagent.queuetokens.service;
 
-import nd.tesserae.phoneagent.PushRepository;
-import nd.tesserae.phoneagent.entities.Person;
-import nd.tesserae.phoneagent.entities.Push;
+import nd.tesserae.phoneagent.queuetokens.PushRepository;
+import nd.tesserae.phoneagent.queuetokens.entities.Person;
+import nd.tesserae.phoneagent.queuetokens.entities.Push;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.util.Date;
 
 /**
  * Created by dscottnull on 7/23/18.

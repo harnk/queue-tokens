@@ -1,11 +1,10 @@
-package nd.tesserae.phoneagent.service;
+package nd.tesserae.phoneagent.queuetokens.service;
 
-import nd.tesserae.phoneagent.PersonRepository;
-import nd.tesserae.phoneagent.entities.Person;
+import nd.tesserae.phoneagent.queuetokens.PersonRepository;
+import nd.tesserae.phoneagent.queuetokens.entities.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
