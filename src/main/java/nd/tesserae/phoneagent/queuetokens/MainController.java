@@ -27,8 +27,8 @@ public class MainController {
     @Autowired
     private PushService pushService;
 
-    //Executes each 5000 ms chg this to 10 minutes later (600,000)
-    @Scheduled(fixedRate=10000)
+    // Executes every 10 minutes (600,000) by default
+    @Scheduled(fixedDelayString = "${interval_time_ms:600000}")
     public void doMainLoop() {
         logger.info("MAIN LOOP IS WORKING ");
         List<Person> persons = new ArrayList<>();
