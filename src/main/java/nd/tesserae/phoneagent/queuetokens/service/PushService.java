@@ -31,7 +31,10 @@ public class PushService {
         long now = ZonedDateTime.now().toInstant().toEpochMilli();
         logger.info("time queued: "+now);
         push.setTimeQueued(now);
-        push.setPayload("{}");
+        String payload = "{\"aps\":{\"alert\":\"111\",\"sensor_config\":[{\"duty_cycle_interval\": 10, \"interval\": 1, \"sensor\": \"acc\"},{\"duty_cycle_interval\": 10, \"interval\": 1, \"sensor\": \"loc\"},{\"duty_cycle_interval\": 10, \"interval\": 1, \"sensor\": \"act\"}]}}";
+
+//        push.setPayload("{}");
+        push.setPayload(payload);
         // do a save
         pushRepository.save(push);
     }
